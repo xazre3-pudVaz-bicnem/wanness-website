@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme {
+  /* ブランドカラーパレット */
+  --color-cream: #fffdf8;
+  --color-surface: #f8f5ec;
+  --color-skylight: #dcecf5;
+  --color-sky: #87bbd8;
+  --color-mimosa: #f5c94a;
+  --color-brand: #f39a28;
+  --color-sage: #8baa78;
+  --color-sagelight: #eef2e6;
+  --color-cocoa: #5d493d;
+  --color-ink: #3f3833;
+  --color-line: #06c755;
+
+  /* フォント */
+  --font-sans: var(--font-noto-sans), "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    sans-serif;
+  --font-serif: var(--font-noto-serif), "Hiragino Mincho ProN", "Yu Mincho",
+    serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+}
+
+/* ===== スクロール表示アニメーション =====
+   Reveal コンポーネント（IntersectionObserver）が data-visible を付与する */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+[data-reveal][data-visible] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 植物の線画がゆっくり現れる演出 */
+.leaf-draw path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+[data-visible] .leaf-draw path,
+[data-visible].leaf-draw path {
+  animation: leaf-draw 2.4s ease-out forwards;
+}
+
+@keyframes leaf-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 写真の軽いズーム */
+.zoom-media img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.zoom-media:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .leaf-draw path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .zoom-media img {
+    transition: none;
+  }
+}
+
+/* ===== FAQ アコーディオン ===== */
+details.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item summary .faq-icon {
+  transition: transform 0.3s ease;
+}
+
+details.faq-item[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* ===== 手描き風の下線 ===== */
+.hand-underline {
+  background-image: linear-gradient(
+    transparent 72%,
+    color-mix(in srgb, var(--color-mimosa) 55%, transparent) 72%,
+    color-mix(in srgb, var(--color-mimosa) 55%, transparent) 92%,
+    transparent 92%
+  );
+}
+
+/* ===== コラム本文 ===== */
+.prose-column {
+  font-size: 1rem;
+}
+
+.prose-column h2 {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-cocoa);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-surface);
+}
+
+.prose-column h3 {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-cocoa);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-column p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-column ul,
+.prose-column ol {
+  margin: 1.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.prose-column ul {
+  list-style: disc;
+}
+
+.prose-column ol {
+  list-style: decimal;
+}
+
+.prose-column li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-column strong {
+  color: var(--color-cocoa);
+}
+
+.prose-column a {
+  color: var(--color-sky);
+  text-decoration: underline;
+}
