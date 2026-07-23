@@ -4,6 +4,7 @@ import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
 import SectionTitle from "@/components/ui/SectionTitle";
 import LeafDecoration from "@/components/ui/LeafDecoration";
+import { PawMarker } from "@/components/ui/PawIcon";
 import FaqList from "@/components/ui/FaqList";
 import JsonLd from "@/components/seo/JsonLd";
 import { WaveBottom } from "@/components/ui/PageHero";
@@ -118,55 +119,41 @@ export default function HomePage() {
         })}
       />
 
-      {/* ===== ファーストビュー ===== */}
-      <section className="relative overflow-hidden">
+      {/* ===== ファーストビュー（全面写真） ===== */}
+      <section className="relative -mt-16 flex h-[86svh] max-h-[920px] min-h-[540px] items-end overflow-hidden md:-mt-20 md:h-[88vh] md:min-h-[620px]">
+        <Image
+          src="/images/care/golden-check.jpg"
+          alt="沖縄の屋外でシニアのゴールデンレトリバーの身体をやさしく確認するわんness代表"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[70%_32%]"
+        />
+        {/* ヘッダーの可読性を保つ、上端のごく淡い光 */}
         <div
           aria-hidden="true"
-          className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-skylight/60 blur-3xl"
+          className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent"
         />
+        {/* 文字の可読性を保つ、下からのやわらかな陰影（暗くしすぎない） */}
         <div
           aria-hidden="true"
-          className="absolute -left-32 top-64 h-80 w-80 rounded-full bg-mimosa/20 blur-3xl"
+          className="absolute inset-0 bg-gradient-to-t from-cocoa/60 via-cocoa/15 to-transparent"
         />
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 pb-14 pt-8 md:grid-cols-[1.1fr_1fr] md:pb-24 md:pt-16">
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-12 md:pb-16">
           <Reveal>
-            <p className="inline-flex items-center gap-2 rounded-full border border-sage/40 bg-sagelight px-4 py-1.5 text-xs font-medium text-sage md:text-sm">
-              <span aria-hidden="true">🐾</span>
-              那覇市を中心に沖縄本島全域へ訪問します
+            <p className="text-xs font-medium tracking-[0.25em] text-white/90 md:text-sm">
+              わんness｜出張トリミング＆ボディケア
             </p>
-            <h1 className="mt-6 font-serif text-[1.9rem] font-bold leading-snug text-cocoa md:text-5xl md:leading-snug">
+            <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-white drop-shadow-[0_1px_10px_rgba(63,56,51,0.35)] md:mt-5 md:text-5xl md:leading-snug">
               キレイにするだけじゃない。
               <br />
-              お家で<span className="hand-underline">&ldquo;整えるケア&rdquo;</span>を。
+              お家で&ldquo;整えるケア&rdquo;を。
             </h1>
-            <p className="mt-6 max-w-xl text-sm leading-loose text-ink/85 md:text-base">
-              身体の左右差や動かしやすさを確認し、
-              <br className="hidden md:block" />
-              その子に合わせたスキンケアとボディケアを行う
-              <br className="hidden md:block" />
-              出張型のベーシックケアトリミングです。
+            <p className="mt-4 max-w-xl text-sm leading-loose text-white/90 drop-shadow-[0_1px_6px_rgba(63,56,51,0.3)] md:mt-5 md:text-base">
+              那覇市を中心に沖縄本島全域へ訪問。
+              <br className="md:hidden" />
+              身体と皮膚の状態まで考えた出張トリミングです。
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <LineButton />
-              <OutlineLink href="/basic-care">サービスを見る</OutlineLink>
-            </div>
-            <p className="mt-5 text-xs text-ink/60 md:text-sm">
-              営業時間 {site.businessHours.text}／{site.businessHours.note}
-            </p>
-          </Reveal>
-          <Reveal delay={0.15} className="relative">
-            <div className="zoom-media overflow-hidden rounded-[2.5rem] rounded-tr-[6rem] shadow-xl shadow-cocoa/10">
-              <Image
-                src="/images/care/golden-check.jpg"
-                alt="沖縄の屋外でシニアのゴールデンレトリバーの身体をやさしく確認するわんness代表"
-                width={1163}
-                height={1163}
-                priority
-                sizes="(min-width: 768px) 45vw, 100vw"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <LeafDecoration className="absolute -bottom-6 -left-6 h-24 w-24 text-sage/50" />
           </Reveal>
         </div>
       </section>
@@ -198,14 +185,9 @@ export default function HomePage() {
         <ul className="grid gap-3 sm:grid-cols-2">
           {worries.map((worry, i) => (
             <Reveal as="li" key={worry} delay={Math.min(i * 0.05, 0.35)}>
-              <div className="flex h-full items-center gap-3 rounded-2xl border border-cocoa/10 bg-white px-5 py-4 text-sm leading-relaxed md:text-base">
-                <span
-                  aria-hidden="true"
-                  className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-skylight text-xs text-sky"
-                >
-                  ✓
-                </span>
-                {worry}
+              <div className="flex h-full items-center gap-3.5 rounded-2xl border border-cocoa/10 bg-white py-4 pl-4 pr-5 text-sm leading-relaxed transition-shadow duration-300 hover:shadow-sm md:gap-4 md:pl-5 md:text-base">
+                <PawMarker />
+                <span className="flex-1">{worry}</span>
               </div>
             </Reveal>
           ))}
