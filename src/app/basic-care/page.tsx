@@ -7,6 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 import CtaSection from "@/components/ui/CtaSection";
 import JsonLd from "@/components/seo/JsonLd";
 import { OutlineLink } from "@/components/ui/Buttons";
+import { PawMarker } from "@/components/ui/PawIcon";
 import { serviceJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
@@ -145,12 +146,7 @@ export default function BasicCarePage() {
                   key={item}
                   className="flex items-center gap-2.5 rounded-2xl bg-white px-4 py-3 text-sm text-cocoa"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mimosa/40 text-[10px] text-brand"
-                  >
-                    ✓
-                  </span>
+                  <PawMarker tone="mimosa" size="sm" />
                   {item}
                 </li>
               ))}

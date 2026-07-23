@@ -7,6 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 import CtaSection from "@/components/ui/CtaSection";
 import JsonLd from "@/components/seo/JsonLd";
 import { OutlineLink } from "@/components/ui/Buttons";
+import { PawMarker } from "@/components/ui/PawIcon";
 import { serviceJsonLd } from "@/lib/jsonld";
 import { carePricing } from "@/data/pricing";
 
@@ -121,12 +122,7 @@ export default function BodyCarePage() {
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               {conditioningFor.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 text-sm md:text-base">
-                  <span
-                    aria-hidden="true"
-                    className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-sagelight text-[10px] text-sage"
-                  >
-                    ✓
-                  </span>
+                  <PawMarker tone="sage" size="sm" />
                   {item}
                 </li>
               ))}

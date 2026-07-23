@@ -27,15 +27,38 @@ export default function PawIcon({ className }: { className?: string }) {
 
 /**
  * 丸背景付きの足跡アイコン。
- * リスト項目の行頭マーカーとして使う（薄い水色の丸背景＋ブラウンの足跡）。
+ * リスト項目の行頭マーカーとして使う。
+ * tone でセクションの色調に合わせ、size で行の高さに合わせる。
  */
-export function PawMarker({ className = "" }: { className?: string }) {
+const toneClasses = {
+  sky: "bg-skylight/70 text-cocoa/70",
+  mimosa: "bg-mimosa/30 text-brand/90",
+  sage: "bg-sagelight text-sage",
+} as const;
+
+type PawMarkerProps = {
+  tone?: keyof typeof toneClasses;
+  size?: "sm" | "md";
+  className?: string;
+};
+
+export function PawMarker({
+  tone = "sky",
+  size = "md",
+  className = "",
+}: PawMarkerProps) {
+  const sizeClasses =
+    size === "sm" ? "h-6 w-6" : "h-9 w-9 md:h-10 md:w-10";
+  const pawClasses =
+    size === "sm"
+      ? "h-[13px] w-[13px]"
+      : "h-[17px] w-[17px] md:h-[19px] md:w-[19px]";
   return (
     <span
       aria-hidden="true"
-      className={`grid h-9 w-9 shrink-0 place-items-center rounded-full bg-skylight/70 md:h-10 md:w-10 ${className}`}
+      className={`grid shrink-0 place-items-center rounded-full ${toneClasses[tone]} ${sizeClasses} ${className}`}
     >
-      <PawIcon className="h-[17px] w-[17px] -rotate-6 text-cocoa/70 md:h-[19px] md:w-[19px]" />
+      <PawIcon className={`-rotate-6 ${pawClasses}`} />
     </span>
   );
 }

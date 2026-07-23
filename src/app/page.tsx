@@ -122,34 +122,29 @@ export default function HomePage() {
       {/* ===== ファーストビュー（全面写真） ===== */}
       <section className="relative -mt-16 flex h-[86svh] max-h-[920px] min-h-[540px] items-end overflow-hidden md:-mt-20 md:h-[88vh] md:min-h-[620px]">
         <Image
-          src="/images/care/golden-check.jpg"
-          alt="沖縄の屋外でシニアのゴールデンレトリバーの身体をやさしく確認するわんness代表"
+          src="/hero.png"
+          alt="トリミングを終えてタオルの上でくつろぐトイプードル"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_32%]"
+          className="object-cover object-[68%_center] md:object-[center_40%]"
         />
-        {/* ヘッダーの可読性を保つ、上端のごく淡い光 */}
+        {/* 文字の可読性を保つ、下からのクリーム色のグラデーション（明るい世界観を維持） */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/35 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-cream via-cream/45 to-transparent md:via-cream/25"
         />
-        {/* 文字の可読性を保つ、下からのやわらかな陰影（暗くしすぎない） */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-cocoa/60 via-cocoa/15 to-transparent"
-        />
-        <div className="relative mx-auto w-full max-w-6xl px-4 pb-12 md:pb-16">
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-10 md:pb-16">
           <Reveal>
-            <p className="text-xs font-medium tracking-[0.25em] text-white/90 md:text-sm">
+            <p className="text-xs font-medium tracking-[0.25em] text-cocoa/70 md:text-sm">
               わんness｜出張トリミング＆ボディケア
             </p>
-            <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-white drop-shadow-[0_1px_10px_rgba(63,56,51,0.35)] md:mt-5 md:text-5xl md:leading-snug">
+            <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-cocoa md:mt-5 md:text-5xl md:leading-snug">
               キレイにするだけじゃない。
               <br />
               お家で&ldquo;整えるケア&rdquo;を。
             </h1>
-            <p className="mt-4 max-w-xl text-sm leading-loose text-white/90 drop-shadow-[0_1px_6px_rgba(63,56,51,0.3)] md:mt-5 md:text-base">
+            <p className="mt-4 max-w-xl text-sm leading-loose text-ink/80 md:mt-5 md:text-base">
               那覇市を中心に沖縄本島全域へ訪問。
               <br className="md:hidden" />
               身体と皮膚の状態まで考えた出張トリミングです。
@@ -243,12 +238,7 @@ export default function HomePage() {
                     "日常ケアの相談・ホームケア提案",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <span
-                        aria-hidden="true"
-                        className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mimosa/30 text-[10px] text-brand"
-                      >
-                        ✓
-                      </span>
+                      <PawMarker tone="mimosa" size="sm" />
                       {item}
                     </li>
                   ))}
