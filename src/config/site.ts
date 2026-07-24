@@ -8,11 +8,11 @@
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://wanness.example.com";
 
-/** 公式LINE URL（未設定の場合は null → 各UIは電話・フォーム案内へフォールバック） */
+/** 公式LINE URL（環境変数で上書き可能） */
 export const lineUrl: string | null =
   process.env.NEXT_PUBLIC_LINE_URL && process.env.NEXT_PUBLIC_LINE_URL !== ""
     ? process.env.NEXT_PUBLIC_LINE_URL
-    : null;
+    : "https://line.me/R/ti/p/@964tmdwu";
 
 export const site = {
   name: "わんness",
@@ -34,6 +34,9 @@ export const site = {
   tel: "080-9063-0207",
   telLink: "tel:080-9063-0207",
 
+  /** 連絡用メールアドレス（フォーム送信先。サイト上には表示していない） */
+  email: "wan1oneness@gmail.com",
+
   address: {
     postalCode: "900-0013",
     prefecture: "沖縄県",
@@ -45,8 +48,10 @@ export const site = {
   businessHours: {
     open: "9:00",
     close: "22:00",
-    text: "9:00～22:00",
-    note: "時間外の場合も、お気軽にお問い合わせください。",
+    /** 営業曜日（構造化データ用。schema.orgのdayOfWeek表記） */
+    openDays: ["Tuesday", "Wednesday", "Sunday"],
+    text: "火・水・日曜日 9:00～22:00",
+    note: "その他の曜日・時間帯も、お気軽にお問い合わせください。",
   },
 
   serviceArea: "那覇市を中心とした沖縄本島全域",

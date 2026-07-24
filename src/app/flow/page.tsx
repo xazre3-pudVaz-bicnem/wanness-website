@@ -36,7 +36,7 @@ const checkItems = [
 const steps = [
   {
     title: "LINEまたは電話でお問い合わせ",
-    text: `まずはLINEまたはお電話（${site.tel}）でご連絡ください。LINEでは、愛犬の写真や気になる箇所の様子も一緒にお送りいただけます。営業時間は${site.businessHours.text}ですが、時間外もまずはお問い合わせください。`,
+    text: `まずはLINEまたはお電話（${site.tel}）でご連絡ください。LINEでは、愛犬の写真や気になる箇所の様子も一緒にお送りいただけます。営業時間は${site.businessHours.text}。${site.businessHours.note}`,
   },
   {
     title: "愛犬の情報を確認",

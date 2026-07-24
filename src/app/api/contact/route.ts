@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
+import { site } from "@/config/site";
 
 /**
  * お問い合わせフォーム送信API
  *
  * 必要な環境変数：
- * - CONTACT_EMAIL   … 送信先メールアドレス
  * - RESEND_API_KEY  … Resend のAPIキー（https://resend.com）
+ * - CONTACT_EMAIL   … 送信先メールアドレス（未設定時は site.email を使用）
  * - CONTACT_FROM    … 送信元アドレス（任意。未設定時は onboarding@resend.dev）
  *
- * 環境変数が未設定の場合は 503 を返し、フロント側でLINE・電話への案内へ
- * 切り替える（送信成功を装わない）。
+ * RESEND_API_KEY が未設定の場合は 503 を返し、フロント側でLINE・電話への
+ * 案内へ切り替える（送信成功を装わない）。
  */
 
 type ContactPayload = {
@@ -32,7 +33,7 @@ type ContactPayload = {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL;
+  const to = process.env.CONTACT_EMAIL || site.email;
 
   let payload: ContactPayload;
   try {

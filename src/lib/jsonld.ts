@@ -55,15 +55,7 @@ export function localBusinessJsonLd() {
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
+      dayOfWeek: [...site.businessHours.openDays],
       opens: "09:00",
       closes: "22:00",
     },

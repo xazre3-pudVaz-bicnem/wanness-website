@@ -10,12 +10,12 @@ import { site } from "@/config/site";
 export const metadata: Metadata = {
   title: "お問い合わせ・ご予約｜LINE・電話・フォーム",
   description:
-    "わんnessへのお問い合わせ・ご予約はLINEが便利です。愛犬の写真や状態も送れます。お電話（080-9063-0207、9:00～22:00）、フォームでのご相談も受け付けています。那覇市を中心に沖縄本島全域へ出張します。",
+    "わんnessへのお問い合わせ・ご予約はLINEが便利です。愛犬の写真や状態も送れます。お電話（080-9063-0207、火・水・日曜9:00～22:00）、フォームでのご相談も受け付けています。那覇市を中心に沖縄本島全域へ出張します。",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "お問い合わせ・ご予約｜わんness",
     description:
-      "LINE・電話・フォームでご相談を受け付けています。時間外もまずはお問い合わせください。",
+      "LINE・電話・フォームでご相談を受け付けています。営業日・時間外もまずはお問い合わせください。",
     url: "/contact",
   },
 };
@@ -70,7 +70,7 @@ export default function ContactPage() {
               <p className="mt-2 flex-1 text-sm leading-loose text-ink/80">
                 営業時間は{site.businessHours.text}。
                 {site.businessHours.note}
-                施術中は出られない場合があります。
+                施術中は電話に出られない場合があります。
               </p>
               <TelButton className="mt-5 w-full" />
             </div>
