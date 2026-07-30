@@ -9,6 +9,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { OutlineLink } from "@/components/ui/Buttons";
 import { PawMarker } from "@/components/ui/PawIcon";
 import { serviceJsonLd } from "@/lib/jsonld";
+import { optionPricing } from "@/data/pricing";
 
 export const metadata: Metadata = {
   title: "ベーシックケアトリミング｜健康管理まで考えた基本コース",
@@ -190,6 +191,40 @@ export default function BasicCarePage() {
           <OutlineLink href="/price">料金表を見る</OutlineLink>
           <OutlineLink href="/flow">ご利用の流れを見る</OutlineLink>
         </Reveal>
+      </section>
+
+      {/* オプションコース */}
+      <section className="bg-skylight/40">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14 md:py-20">
+          <SectionTitle
+            label="オプション"
+            title="さらに深く整えたい子への、オプションコース"
+            description="ベーシックケアトリミングには、その子の状態に合わせて追加できるオプションコースをご用意しています。"
+          />
+          <div className="grid gap-5 md:grid-cols-3">
+            {optionPricing.options.map((option, i) => (
+              <Reveal key={option.code} delay={i * 0.08}>
+                <div className="flex h-full flex-col rounded-3xl border border-cocoa/10 bg-white p-6 md:p-7">
+                  <p className="text-xs font-bold tracking-widest text-brand">
+                    オプション{option.code}
+                  </p>
+                  <h3 className="mt-1.5 font-serif text-lg font-semibold text-cocoa">
+                    {option.name}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-loose text-ink/80">
+                    {option.catch}。
+                  </p>
+                  <p className="mt-3 font-serif text-xl font-bold text-cocoa">
+                    {option.price.min.toLocaleString("ja-JP")}円～
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-8 text-center">
+            <OutlineLink href="/price#options">オプションの詳細・料金を見る</OutlineLink>
+          </Reveal>
+        </div>
       </section>
 
       <CtaSection

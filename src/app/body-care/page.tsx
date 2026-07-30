@@ -30,6 +30,8 @@ const conditioningFor = [
   "以前より動く時間が減った子",
   "身体の左右差が気になる子",
   "歩き方や姿勢が気になる子",
+  "身体のこわばりが気になる子",
+  "元気なうちから予防的なメンテナンスをしたい子",
   "日常的な身体ケアを取り入れたい子",
 ];
 
@@ -80,25 +82,37 @@ export default function BodyCarePage() {
                   犬の理学療法インストラクター師範の学びを土台にしたケアですが、病気やケガの診断・治療・医療リハビリではありません。治療中の子は、必要に応じて主治医へご相談のうえでご利用ください。
                 </p>
               </div>
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="rounded-2xl bg-mimosa/25 p-5 text-center">
-                  <p className="text-xs text-ink/70">施術時間</p>
-                  <p className="mt-1 font-serif text-xl font-bold text-cocoa">
-                    {bodyConditioning.duration}
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-mimosa/25 p-5 text-center">
-                  <p className="text-xs text-ink/70">料金</p>
-                  <p className="mt-1 font-serif text-xl font-bold text-cocoa">
-                    {bodyConditioning.price.min.toLocaleString("ja-JP")}円～
-                  </p>
-                </div>
+              <div className="mt-6 overflow-hidden rounded-2xl border border-cocoa/10 bg-white">
+                <table className="w-full text-left text-sm">
+                  <caption className="sr-only">
+                    ボディコンディショニング 体重別料金表（30分）
+                  </caption>
+                  <tbody>
+                    {bodyConditioning.tiers.map((tier) => (
+                      <tr key={tier.weight} className="border-b border-cocoa/10 last:border-b-0">
+                        <th scope="row" className="px-4 py-3 font-medium text-cocoa md:px-5">
+                          {tier.label}
+                          <span className="ml-1.5 text-xs font-normal text-ink/60">
+                            {tier.weight}
+                          </span>
+                        </th>
+                        <td className="px-2 py-3 text-xs text-ink/60">
+                          {bodyConditioning.duration}
+                        </td>
+                        <td className="px-4 py-3 text-right font-semibold tabular-nums text-cocoa md:px-5">
+                          {tier.price.toLocaleString("ja-JP")}円
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-              <p className="mt-3 rounded-2xl bg-surface p-4 text-center text-sm font-medium text-cocoa">
-                トリミングと同日のご利用なら{" "}
+              <p className="mt-3 rounded-2xl bg-mimosa/25 p-4 text-center text-sm font-medium text-cocoa">
+                トリミングと同日のご利用なら、上記から{" "}
                 <span className="font-serif text-lg font-bold text-brand">
-                  {bodyConditioning.withTrimming.min.toLocaleString("ja-JP")}円～
+                  {bodyConditioning.sameDayDiscount.toLocaleString("ja-JP")}円OFF
                 </span>
+                （{bodyConditioning.withTrimming.min.toLocaleString("ja-JP")}円～）
               </p>
             </Reveal>
           </div>

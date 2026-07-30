@@ -57,11 +57,11 @@ const visitingBenefits = [
   },
   {
     title: "移動による負担を抑えられる",
-    text: "車移動や待ち時間がなく、シニアの子や暑さが苦手な子の負担を減らせます。",
+    text: "車移動や待ち時間がなく、シニアの子や外出が苦手な子の負担を減らせます。",
   },
   {
     title: "他の犬と接触しにくい",
-    text: "店舗型サロンと違い、ほかのわんちゃんとの接触を避けやすい環境です。",
+    text: "店舗型サロンと違い、ほかのわんちゃんとの接触を避けられるため、ストレスやノミ・ダニ、感染症のリスク低減につながります。",
   },
   {
     title: "施術の様子を確認しやすい",
@@ -69,7 +69,7 @@ const visitingBenefits = [
   },
   {
     title: "生活環境も踏まえて相談できる",
-    text: "普段過ごしているお部屋や床の状態なども見ながら、日常のケアをご提案できます。",
+    text: "お困りであれば、普段過ごしているお部屋や床の状態なども見ながら、日常のケアをご提案できます。",
   },
   {
     title: "外出が難しいご家庭も相談しやすい",
@@ -79,11 +79,11 @@ const visitingBenefits = [
 
 const values = [
   "その子のペースを優先する",
-  "性格・年齢・体質を一括りにしない",
-  "皮膚や身体の状態を確認する",
-  "無理な施術を行わない",
-  "飼い主さまとの会話を大切にする",
-  "継続的なホームケアにつなげる",
+  "性格・年齢・体質・犬種だけで一括りにしない",
+  "皮膚や全身の状態を確認する",
+  "その子の状態に合わせ、健康につながるよう調整しながら施術する",
+  "飼い主さまとの会話を大切にし、わんちゃんとご家族にとってのベストスタイルを一緒に探す",
+  "継続的なホームケアを通して、飼い主さまとわんちゃんが最高のパートナーであり続けられるようサポートする",
 ];
 
 const instagramTopics = [
@@ -373,14 +373,14 @@ export default function HomePage() {
             <ul className="space-y-3">
               {values.map((value, i) => (
                 <Reveal as="li" key={value} delay={Math.min(i * 0.05, 0.3)}>
-                  <div className="flex items-center gap-3 rounded-2xl bg-sagelight px-5 py-3.5 text-sm font-medium text-cocoa md:text-base">
+                  <div className="flex items-start gap-3 rounded-2xl bg-sagelight px-4 py-3.5 text-sm font-medium leading-relaxed text-cocoa md:px-5 md:text-base">
                     <span
                       aria-hidden="true"
-                      className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-sage text-xs text-white"
+                      className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-sage text-xs text-white"
                     >
                       {i + 1}
                     </span>
-                    {value}
+                    <span className="flex-1">{value}</span>
                   </div>
                 </Reveal>
               ))}
@@ -495,6 +495,9 @@ export default function HomePage() {
             <Reveal delay={0.1}>
               <p className="font-serif text-2xl font-semibold text-cocoa">
                 {site.representative.name}
+              </p>
+              <p className="mt-1.5 text-sm font-medium tracking-wide text-cocoa/80 md:text-base">
+                {site.representative.role}
               </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {site.representative.qualifications.map((q) => (

@@ -7,7 +7,8 @@ import Reveal from "@/components/ui/Reveal";
 import CtaSection from "@/components/ui/CtaSection";
 import PriceTable from "@/components/ui/PriceTable";
 import { OutlineLink } from "@/components/ui/Buttons";
-import { carePricing } from "@/data/pricing";
+import { PawMarker } from "@/components/ui/PawIcon";
+import { carePricing, optionPricing } from "@/data/pricing";
 import { site } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -46,49 +47,126 @@ export default function PricePage() {
         </Reveal>
       </section>
 
-      {/* ボディケア料金 */}
-      <section className="bg-surface">
-        <div className="mx-auto w-full max-w-5xl px-4 py-14 md:py-20">
-          <SectionTitle label="ボディケア" title="ボディケアメニューの料金" />
-          <div className="grid gap-5 md:grid-cols-2">
-            <Reveal>
-              <div className="h-full rounded-3xl border border-cocoa/10 bg-white p-7">
-                <h3 className="font-serif text-lg font-semibold text-cocoa">
-                  {bodyConditioning.name}
-                </h3>
-                <p className="mt-2 text-sm text-ink/70">
-                  施術時間 {bodyConditioning.duration}
-                </p>
-                <p className="mt-4 font-serif text-2xl font-bold text-cocoa">
-                  {bodyConditioning.price.min.toLocaleString("ja-JP")}円～
-                </p>
-                <p className="mt-2 inline-block rounded-full bg-mimosa/30 px-4 py-1.5 text-sm font-medium text-cocoa">
-                  トリミングと同日なら{" "}
-                  {bodyConditioning.withTrimming.min.toLocaleString("ja-JP")}円～
-                </p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="h-full rounded-3xl border border-cocoa/10 bg-white p-7">
-                <h3 className="font-serif text-lg font-semibold text-cocoa">
-                  {walkSupport.name}
-                </h3>
-                <p className="mt-2 text-sm text-ink/70">時間 {walkSupport.duration}</p>
-                <p className="mt-4 font-serif text-2xl font-bold text-cocoa">
-                  {walkSupport.price.min.toLocaleString("ja-JP")}円～
-                </p>
-                <p className="mt-2 text-sm text-ink/70">
-                  歩き方の確認＋お散歩後の簡単なケア付き
-                </p>
-              </div>
-            </Reveal>
+      {/* オプションコース */}
+      <section id="options" className="bg-surface">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14 md:py-20">
+          <SectionTitle
+            label="オプション"
+            title="トリミングに追加できるオプションコース"
+            description={optionPricing.note}
+          />
+          <div className="grid gap-5 md:grid-cols-3">
+            {optionPricing.options.map((option, i) => (
+              <Reveal key={option.code} delay={i * 0.08}>
+                <div className="flex h-full flex-col rounded-3xl border border-cocoa/10 bg-white p-7">
+                  <p className="flex items-baseline gap-2">
+                    <span className="grid h-9 w-9 shrink-0 -translate-y-0.5 place-items-center self-center rounded-full bg-brand font-serif text-sm font-bold text-white">
+                      {option.code === "A＆B" ? "＋" : option.code}
+                    </span>
+                    <span className="font-serif text-lg font-semibold text-cocoa">
+                      {option.code === "A＆B" ? "A＆B " : ""}
+                      {option.name}
+                    </span>
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-brand">{option.catch}</p>
+                  <p className="mt-3 text-sm leading-loose text-ink/80">
+                    {option.description}
+                  </p>
+                  <div className="mt-4">
+                    <p className="text-xs font-semibold text-ink/60">こんな子におすすめ</p>
+                    <ul className="mt-2 space-y-1.5">
+                      {option.recommendedFor.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-xs leading-relaxed text-ink/80 md:text-sm">
+                          <PawMarker tone={option.tone} size="sm" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p className="mt-auto pt-5 font-serif text-2xl font-bold text-cocoa">
+                    {option.price.min.toLocaleString("ja-JP")}円～
+                  </p>
+                </div>
+              </Reveal>
+            ))}
           </div>
           <Reveal className="mt-6">
-            <p className="text-center text-xs leading-relaxed text-ink/60 md:text-sm">
-              その他のオプションや詳細は、InstagramまたはLINEにてご案内しています。
+            <p className="mx-auto max-w-3xl rounded-2xl border border-sky/30 bg-skylight/50 p-5 text-center text-xs leading-relaxed text-ink/75 md:text-sm">
+              {optionPricing.disclaimer}
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* ボディケア料金 */}
+      <section className="mx-auto w-full max-w-5xl px-4 py-14 md:py-20">
+        <SectionTitle
+          label="ボディケア"
+          title="ボディケアメニューの料金"
+          description="ボディコンディショニング単体でのご利用は、体重に応じた料金です。"
+        />
+        <Reveal>
+          <div className="overflow-hidden rounded-3xl border border-cocoa/10 bg-white">
+            <table className="w-full text-left text-sm md:text-base">
+              <caption className="sr-only">
+                ボディコンディショニング 体重別料金表（30分）
+              </caption>
+              <thead>
+                <tr className="bg-surface text-sm text-cocoa">
+                  <th scope="col" className="px-5 py-3.5 font-semibold md:px-6">
+                    体格・体重
+                  </th>
+                  <th scope="col" className="px-5 py-3.5 font-semibold md:px-6">
+                    時間
+                  </th>
+                  <th scope="col" className="px-5 py-3.5 font-semibold md:px-6">
+                    料金
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {bodyConditioning.tiers.map((tier) => (
+                  <tr key={tier.weight} className="border-t border-cocoa/10">
+                    <th scope="row" className="px-5 py-3.5 font-medium text-cocoa md:px-6">
+                      {tier.label}
+                      <span className="ml-1.5 text-xs font-normal text-ink/60 md:text-sm">
+                        {tier.weight}
+                      </span>
+                    </th>
+                    <td className="px-5 py-3.5 md:px-6">{bodyConditioning.duration}</td>
+                    <td className="px-5 py-3.5 font-semibold tabular-nums text-cocoa md:px-6">
+                      {tier.price.toLocaleString("ja-JP")}円
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 rounded-2xl bg-mimosa/25 p-4 text-center text-sm font-medium text-cocoa">
+            トリミングと同日のご利用なら、上記から
+            <span className="font-serif text-lg font-bold text-brand">
+              {bodyConditioning.sameDayDiscount.toLocaleString("ja-JP")}円OFF
+            </span>
+          </p>
+        </Reveal>
+        <Reveal className="mt-6">
+          <div className="rounded-3xl border border-cocoa/10 bg-white p-7">
+            <h3 className="font-serif text-lg font-semibold text-cocoa">
+              {walkSupport.name}
+            </h3>
+            <p className="mt-2 text-sm text-ink/70">
+              時間 {walkSupport.duration}／歩き方の確認＋お散歩後の簡単なケア付き
+            </p>
+            <p className="mt-3 font-serif text-2xl font-bold text-cocoa">
+              {walkSupport.price.min.toLocaleString("ja-JP")}円～
+            </p>
+          </div>
+        </Reveal>
+        <Reveal className="mt-6">
+          <p className="text-center text-xs leading-relaxed text-ink/60 md:text-sm">
+            その他のオプションや詳細は、InstagramまたはLINEにてご案内しています。
+          </p>
+        </Reveal>
       </section>
 
       {/* 出張費 */}

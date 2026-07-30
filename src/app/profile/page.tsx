@@ -54,7 +54,13 @@ export default function ProfilePage() {
                 {site.representative.name}
               </h2>
               <p className="mt-1 text-sm text-ink/60">{site.representative.nameReading}</p>
-              <div className="mt-5">
+              <div className="mt-4">
+                <p className="text-xs font-semibold text-ink/60">肩書き</p>
+                <p className="mt-1 text-base font-medium tracking-wide text-cocoa">
+                  {site.representative.role}
+                </p>
+              </div>
+              <div className="mt-4">
                 <p className="text-xs font-semibold text-ink/60">保有資格</p>
                 <ul className="mt-2 flex flex-wrap gap-2">
                   {site.representative.qualifications.map((q) => (

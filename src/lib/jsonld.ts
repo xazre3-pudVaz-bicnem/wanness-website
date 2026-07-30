@@ -70,7 +70,7 @@ export function personJsonLd() {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
     name: site.representative.name,
-    jobTitle: "出張トリマー・犬の理学療法インストラクター師範",
+    jobTitle: site.representative.role,
     worksFor: { "@id": orgId },
     knowsAbout: [
       "犬のトリミング",

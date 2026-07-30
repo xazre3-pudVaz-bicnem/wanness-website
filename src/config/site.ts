@@ -24,6 +24,8 @@ export const site = {
   representative: {
     name: "佐々木 那菜",
     nameReading: "ささき なな",
+    /** 肩書き */
+    role: "トリマー",
     /**
      * 保有資格：確認できているもののみ掲載。
      * 追加の資格・経歴が確定したらここへ追記する。
