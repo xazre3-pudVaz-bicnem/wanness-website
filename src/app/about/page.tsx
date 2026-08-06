@@ -145,13 +145,25 @@ export default function AboutPage() {
                 ["電話番号", site.tel],
                 ["営業時間", `${site.businessHours.text}（${site.businessHours.note}）`],
                 ["対応エリア", site.serviceArea],
-                ["Instagram", site.instagram.id],
               ].map(([label, value]) => (
                 <div key={label} className="grid grid-cols-[7rem_1fr] gap-4 px-6 py-4 md:grid-cols-[10rem_1fr]">
                   <dt className="font-medium text-ink/60">{label}</dt>
                   <dd className="text-ink/90">{value}</dd>
                 </div>
               ))}
+              <div className="grid grid-cols-[7rem_1fr] gap-4 px-6 py-4 md:grid-cols-[10rem_1fr]">
+                <dt className="font-medium text-ink/60">Instagram</dt>
+                <dd>
+                  <a
+                    href={site.instagram.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-brand underline underline-offset-2 transition hover:opacity-70"
+                  >
+                    {site.instagram.id}
+                  </a>
+                </dd>
+              </div>
             </dl>
           </Reveal>
         </div>
