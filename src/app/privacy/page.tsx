@@ -30,7 +30,7 @@ const sections = [
     list: [
       "お名前、電話番号、メールアドレス、LINEアカウント名",
       "ご住所（訪問先）、駐車環境などご自宅に関する情報",
-      "愛犬に関する情報（犬種、年齢、体重、性格、健康状態、持病、通院状況など）",
+      "愛犬ちゃんに関する情報（犬種、年齢、体重、性格、健康状態、持病、通院状況など）",
       "お問い合わせ・ご相談の内容",
     ],
   },
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
       <Breadcrumbs items={[{ name: "プライバシーポリシー", path: "/privacy" }]} />
       <PageHero
         title="プライバシーポリシー"
-        description="お客さまと愛犬の情報を、安心してお預けいただくために。"
+        description="お客さまと愛犬ちゃんの情報を、安心してお預けいただくために。"
       />
       <section className="mx-auto w-full max-w-3xl px-4 py-14 md:py-20">
         <div className="space-y-8">

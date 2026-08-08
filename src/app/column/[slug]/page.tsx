@@ -175,7 +175,7 @@ export default async function ColumnDetailPage({
           </div>
 
           <p className="mt-6 rounded-2xl border border-sky/30 bg-skylight/40 p-5 text-xs leading-relaxed text-ink/70">
-            本記事は一般的な情報提供を目的としたもので、病気の診断・治療に代わるものではありません。愛犬の体調に不安があるときは、かかりつけの動物病院へご相談ください。
+            本記事は一般的な情報提供を目的としたもので、病気の診断・治療に代わるものではありません。愛犬ちゃんの体調に不安があるときは、かかりつけの動物病院へご相談ください。
           </p>
         </Reveal>
       </article>

@@ -10,7 +10,7 @@ import { site } from "@/config/site";
 export const metadata: Metadata = {
   title: "お問い合わせ・ご予約｜LINE・電話・フォーム",
   description:
-    "わんnessへのお問い合わせ・ご予約はLINEが便利です。愛犬の写真や状態も送れます。お電話（080-9063-0207、火・水・日曜9:00～22:00）、フォームでのご相談も受け付けています。那覇市を中心に沖縄本島全域へ出張します。",
+    "わんnessへのお問い合わせ・ご予約はLINEが便利です。愛犬ちゃんの写真や状態も送れます。お電話（080-9063-0207、火・水・日曜9:00～22:00）、フォームでのご相談も受け付けています。那覇市を中心に沖縄本島全域へ出張します。",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "お問い合わせ・ご予約｜わんness",
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <Breadcrumbs items={[{ name: "お問い合わせ", path: "/contact" }]} />
       <PageHero
         title="お問い合わせ・ご予約"
-        description="ご予約・ご相談はLINEがいちばんスムーズです。愛犬の写真や気になる箇所の様子も、そのまま送っていただけます。"
+        description="ご予約・ご相談はLINEがいちばんスムーズです。愛犬ちゃんの写真や気になる箇所の様子も、そのまま送っていただけます。"
       />
 
       {/* LINE・電話 */}

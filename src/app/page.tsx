@@ -142,12 +142,12 @@ export default function HomePage() {
             <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-cocoa md:mt-5 md:text-5xl md:leading-snug">
               キレイにするだけじゃない。
               <br />
-              お家で&ldquo;整えるケア&rdquo;を。
+              お家で&ldquo;身体まで整えるケア&rdquo;を。
             </h1>
             <p className="mt-4 max-w-xl text-sm leading-loose text-ink/80 md:mt-5 md:text-base">
               那覇市を中心に沖縄本島全域へ訪問。
-              <br className="md:hidden" />
-              身体と皮膚の状態まで考えた出張トリミングです。
+              <br />
+              スキンケアを重視したトリミング・ボディケアを組み合わせた、愛犬ちゃんの健康的な身体と暮らしを支える訪問ケアです。
             </p>
           </Reveal>
         </div>
@@ -164,7 +164,7 @@ export default function HomePage() {
             </p>
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-loose text-ink/80 md:text-base">
               見た目の美しさだけではなく、皮膚や身体の状態にも目を向けながら、
-              愛犬の健やかな毎日を支えるケアをお届けします。
+              愛犬ちゃんの健やかな毎日を支えるケアをお届けします。
             </p>
           </Reveal>
         </div>
@@ -356,10 +356,10 @@ export default function HomePage() {
         <div className="grid items-center gap-10 md:grid-cols-2">
           <Reveal className="zoom-media order-2 overflow-hidden rounded-[2.5rem] rounded-bl-[6rem] shadow-lg shadow-cocoa/10 md:order-1">
             <Image
-              src="/images/care/senior-golden-face.jpg"
-              alt="ご自宅でくつろぐシニアのゴールデンレトリバー"
-              width={1108}
-              height={1477}
+              src="/images/trimming/after-flowers.jpg"
+              alt="トリミング後にお花の首飾りをつけて記念撮影する2頭のビションフリーゼ"
+              width={1477}
+              height={1108}
               sizes="(min-width: 768px) 45vw, 100vw"
               className="aspect-[4/3] h-auto w-full object-cover md:aspect-[5/4]"
             />
@@ -600,7 +600,7 @@ export default function HomePage() {
             その子に合ったケアを。
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-loose text-ink/80 md:text-base">
-            愛犬の年齢、性格、身体の状態、ご家庭の事情も含めてご相談ください。
+            愛犬ちゃんの年齢、性格、身体の状態、ご家庭の事情も含めてご相談ください。
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <LineButton />

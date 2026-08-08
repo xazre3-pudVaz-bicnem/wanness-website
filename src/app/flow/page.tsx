@@ -9,7 +9,7 @@ import { site } from "@/config/site";
 export const metadata: Metadata = {
   title: "ご利用の流れ｜お問い合わせから施術当日まで",
   description:
-    "わんnessの出張トリミングご利用の流れをご案内。LINEまたは電話でのお問い合わせから、愛犬の情報確認、日程調整、ご自宅への訪問、カウンセリング、施術、施術後の共有まで7つのステップで分かりやすく説明します。",
+    "わんnessの出張トリミングご利用の流れをご案内。LINEまたは電話でのお問い合わせから、愛犬ちゃんの情報確認、日程調整、ご自宅への訪問、カウンセリング、施術、施術後の共有まで7つのステップで分かりやすく説明します。",
   alternates: { canonical: "/flow" },
   openGraph: {
     title: "ご利用の流れ｜わんness",
@@ -36,10 +36,10 @@ const checkItems = [
 const steps = [
   {
     title: "LINEまたは電話でお問い合わせ",
-    text: `まずはLINEまたはお電話（${site.tel}）でご連絡ください。LINEでは、愛犬の写真や気になる箇所の様子も一緒にお送りいただけます。営業時間は${site.businessHours.text}。${site.businessHours.note}`,
+    text: `まずはLINEまたはお電話（${site.tel}）でご連絡ください。LINEでは、愛犬ちゃんの写真や気になる箇所の様子も一緒にお送りいただけます。営業時間は${site.businessHours.text}。${site.businessHours.note}`,
   },
   {
-    title: "愛犬の情報を確認",
+    title: "愛犬ちゃんの情報を確認",
     text: "安全に施術できるよう、わんちゃんの状態やご自宅の環境について伺います。",
     hasCheckList: true,
   },

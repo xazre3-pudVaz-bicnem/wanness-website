@@ -171,7 +171,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="愛犬の様子や気になっていること、ご希望をご自由にお書きください。"
+          placeholder="愛犬ちゃんの様子や気になっていること、ご希望をご自由にお書きください。"
           className={inputClass}
         />
       </div>

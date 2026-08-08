@@ -54,7 +54,7 @@ export default function AreaPage() {
         </Reveal>
         <Reveal className="mt-6">
           <p className="text-center text-xs leading-relaxed text-ink/60 md:text-sm">
-            上記以外の地域も、日程によってはご案内できる場合があります。まずはお住まいの地域を添えてお問い合わせください。
+            まずはお住まいの地域を添えてお問い合わせください。
           </p>
         </Reveal>
       </section>
@@ -129,7 +129,7 @@ export default function AreaPage() {
               遠方エリアをご検討の方へ
             </h2>
             <p className="mt-3">
-              糸満市・南城市・うるま市など那覇市から距離のある地域も、日程を調整しながらできる限り対応しています。同じ地域で複数のご家庭がご利用の場合など、訪問しやすくなるケースもありますので、あきらめる前に一度ご相談ください。
+              中部・北部エリアなど那覇市から距離のある地域も、日程を調整しながらできる限り対応しています。同じ地域で複数のご家庭がご利用の場合など、訪問しやすくなるケースもありますので、あきらめる前に一度ご相談ください。
             </p>
           </div>
         </Reveal>

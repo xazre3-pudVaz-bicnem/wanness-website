@@ -13,7 +13,7 @@ import { siteUrl } from "@/config/site";
 export const metadata: Metadata = {
   title: "コラム｜犬の健康ケア・トリミングの読みもの",
   description:
-    "わんnessのコラム。シニア犬のトリミング、犬の皮膚・被毛ケア、身体の左右差や歩き方のこと、沖縄での犬との暮らしなど、愛犬の健康管理に役立つ情報をお届けします。",
+    "わんnessのコラム。シニア犬のトリミング、犬の皮膚・被毛ケア、身体の左右差や歩き方のこと、沖縄での犬との暮らしなど、愛犬ちゃんの健康管理に役立つ情報をお届けします。",
   alternates: { canonical: "/column" },
   openGraph: {
     title: "コラム｜わんness",
@@ -74,7 +74,7 @@ export default async function ColumnPage({
       <Breadcrumbs items={[{ name: "コラム", path: "/column" }]} />
       <PageHero
         title="コラム"
-        description="愛犬の健康管理やトリミング、犬との暮らしに役立つ情報をお届けします。"
+        description="愛犬ちゃんの健康管理やトリミング、犬との暮らしに役立つ情報をお届けします。"
       />
 
       <section className="mx-auto w-full max-w-6xl px-4 py-14 md:py-20">

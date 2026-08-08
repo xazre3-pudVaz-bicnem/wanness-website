@@ -79,7 +79,7 @@ export default function BodyCarePage() {
                   身体の左右差や関節の動かしやすさを確認しながら、背筋を伸ばすやさしいケアや、緊張しやすい箇所を緩めるケアを、その子のペースに合わせて行います。
                 </p>
                 <p>
-                  犬の理学療法インストラクター師範の学びを土台にしたケアですが、病気やケガの診断・治療・医療リハビリではありません。治療中の子は、必要に応じて主治医へご相談のうえでご利用ください。
+                  犬の理学療法インストラクター師範の学びを土台にしたケアですが、病気やケガの診断・治療・医療リハビリではありません。治療中の子は、必要に応じて獣医師さんへのご相談をおすすめしております。
                 </p>
               </div>
               <div className="mt-6 overflow-hidden rounded-2xl border border-cocoa/10 bg-white">
@@ -209,7 +209,7 @@ export default function BodyCarePage() {
               </li>
               <li className="flex gap-2.5">
                 <span aria-hidden="true" className="text-sky">・</span>
-                治療中・通院中のわんちゃんは、事前に状態をお知らせください。必要に応じて主治医への確認をお願いする場合があります。
+                治療中・通院中のわんちゃんは、事前に状態をお知らせください。必要に応じてかかりつけの獣医師さんへの確認をお願いする場合があります。
               </li>
               <li className="flex gap-2.5">
                 <span aria-hidden="true" className="text-sky">・</span>

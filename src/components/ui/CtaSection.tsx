@@ -10,7 +10,7 @@ type CtaSectionProps = {
 /** ページ下部共通のご相談CTA */
 export default function CtaSection({
   title = "いつものお家で、その子に合ったケアを。",
-  message = "愛犬の年齢、性格、身体の状態、ご家庭の事情も含めてご相談ください。",
+  message = "愛犬ちゃんの年齢、性格、身体の状態、ご家庭の事情も含めてご相談ください。",
 }: CtaSectionProps) {
   return (
     <section className="relative overflow-hidden bg-surface">

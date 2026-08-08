@@ -103,7 +103,7 @@ export default function PricePage() {
         <SectionTitle
           label="ボディケア"
           title="ボディケアメニューの料金"
-          description="ボディコンディショニング単体でのご利用は、体重に応じた料金です。"
+          description="ボディコンディショニング単体での出張のご利用は、体重に応じた料金です。"
         />
         <Reveal>
           <div className="overflow-hidden rounded-3xl border border-cocoa/10 bg-white">
