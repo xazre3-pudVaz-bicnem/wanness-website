@@ -136,8 +136,9 @@ export default function HomePage() {
         />
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-10 md:pb-16">
           <Reveal>
-            <p className="text-xs font-medium tracking-[0.25em] text-cocoa/70 md:text-sm">
-              わんness｜出張トリミング＆ボディケア
+            <p className="flex items-center gap-2.5 font-serif text-sm font-semibold tracking-[0.18em] text-cocoa/85 md:text-base">
+              <span aria-hidden="true" className="h-px w-7 bg-brand/60 md:w-9" />
+              {site.slogan}
             </p>
             <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-cocoa md:mt-5 md:text-5xl md:leading-snug">
               キレイにするだけじゃない。

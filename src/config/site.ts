@@ -20,6 +20,7 @@ export const site = {
   tagline: "那覇市の出張トリミング・犬のボディケア",
   concept: "わんこと人が、元気に、心地よく。支え想い合って暮らせる毎日を。",
   brandCopy: "犬の健康寿命を、のばしたい。",
+  slogan: "うちの子らしく、ずっと元気に",
 
   representative: {
     name: "佐々木 那菜",
