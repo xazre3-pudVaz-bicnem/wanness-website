@@ -136,11 +136,19 @@ export default function HomePage() {
         />
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-10 md:pb-16">
           <Reveal>
-            <p className="flex items-center gap-2.5 font-serif text-sm font-semibold tracking-[0.18em] text-cocoa/85 md:text-base">
-              <span aria-hidden="true" className="h-px w-7 bg-brand/60 md:w-9" />
-              {site.slogan}
+            {/* スローガン（わんnessの想い） */}
+            <p className="font-serif text-base font-semibold leading-relaxed tracking-[0.08em] text-cocoa md:text-xl">
+              「{site.slogan}」
             </p>
-            <h1 className="mt-4 font-serif text-[1.85rem] font-bold leading-snug text-cocoa md:mt-5 md:text-5xl md:leading-snug">
+            {/* ここで一区切り。この下から出張トリミング＆ボディケアの本題 */}
+            <span
+              aria-hidden="true"
+              className="mt-3.5 block h-px w-14 bg-brand/70 md:mt-4 md:w-20"
+            />
+            <p className="mt-3.5 text-xs font-medium tracking-[0.25em] text-cocoa/70 md:mt-4 md:text-sm">
+              わんness｜出張トリミング＆ボディケア
+            </p>
+            <h1 className="mt-3 font-serif text-[1.85rem] font-bold leading-snug text-cocoa md:mt-4 md:text-5xl md:leading-snug">
               キレイにするだけじゃない。
               <br />
               お家で&ldquo;身体まで整えるケア&rdquo;を。
